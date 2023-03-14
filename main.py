@@ -4,26 +4,35 @@ from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Рандомно считает урон персонажей."""
+    warrior_1 = randint(8, 10)
+    mage_1 = randint(10, 15)
+    healer = randint(2, 4)
     if char_class == 'warrior':
-        return (f'{char_name} нанёс урон противнику равный {randint(8, 10)}')
+        return (f'{char_name} нанёс урон противнику равный {warrior_1}')
     if char_class == 'mage':
-        return (f'{char_name} нанёс урон противнику равный {randint(10, 15)}')
+        return (f'{char_name} нанёс урон противнику равный {mage_1}')
     if char_class == 'healer':
-        return (f'{char_name} нанёс урон противнику равный {randint(2, 4)}')
+        return (f'{char_name} нанёс урон противнику равный {healer}')
     return 'Произошла ошибка'
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Рандомно считает блокировку ударов персонажей."""
+    warrior_2 = randint(15, 20)
+    mage_2 = randint(8, 12)
+    healer_2 = randint(12, 15)
     if char_class == 'warrior':
-        return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
+        return (f'{char_name} блокировал {warrior_2} урона')
     if char_class == 'mage':
-        return (f'{char_name} блокировал {10 + randint(-2, 2)} урона')
+        return (f'{char_name} блокировал {mage_2} урона')
     if char_class == 'healer':
-        return (f'{char_name} блокировал {10 + randint(2, 5)} урона')
+        return (f'{char_name} блокировал {healer_2} урона')
     return 'Произошла ошибка'
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Список специальных умений персонажей."""
     if char_class == 'warrior':
         return (f'{char_name} применил специальное умение «Выносливость 105»')
     if char_class == 'mage':
@@ -34,6 +43,7 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Знакомство с выбраным персонажем."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -59,6 +69,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Выбор персонажа."""
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
